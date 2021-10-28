@@ -1,20 +1,14 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form class="box" style="border-radius: 16px;" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
-                <img src="assets/logo.png" height="50" width="50"><h1>KSPlay Login</h1>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="name" placeholder="Username" ngModel required #name="ngModel" minlength="3">
-                   <input class="form-control" type="password" name="password" placeholder="Password" ngModel required minlength="3" #password="ngModel">
-                </div>
-                <input type="submit" value="Login" [disabled]="!form.valid">
-                <small class="text-danger" *ngIf="!name.valid && (name.dirty || name.touched)">
+<form class="box" #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+     <img src="assets/logo.png" height="50" width="50"><h1>KSPlay Login</h1>
+     <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Username" ngModel required #name="ngModel" minlength="3">
+            <input class="form-control" type="password" name="password" placeholder="Password" ngModel required minlength="3" #password="ngModel">
+     </div>
+            <input type="submit" value="Login" [disabled]="!form.valid">
+            <small class="text-danger" *ngIf="!name.valid && (name.dirty || name.touched)">
                     Invalid Username
-                </small><br>
-                <small class="text-danger" *ngIf="!password.valid && (password.dirty || password.touched)">
+            </small><br>
+            <small class="text-danger" *ngIf="!password.valid && (password.dirty || password.touched)">
                     Invalid Password
-                </small>
-            </form>
-        </div>
-    </div>
-</div>
+            </small>
+</form>
