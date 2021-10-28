@@ -1,0 +1,14 @@
+.text-gray {
+    color: #aaa
+}
+
+img {
+    height: 170px;
+    width: 140px
+}
+.sidebar{
+    max-width:180px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

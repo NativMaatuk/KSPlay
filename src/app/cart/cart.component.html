@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="https://use.fontawesome.com/c560c025cf.js"></script>
+<div class="container">
+   <div class="card shopping-cart">
+            <div class="card-header bg-dark text-light">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Shipping cart
+                <a routerLink="/home" class="btn btn-outline-info btn-sm pull-right">Continue shopping</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="card-body">
+                    <!-- PRODUCT -->
+                    <div class="row" *ngFor="let item of items"  style="margin-bottom: 10px;">
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+                                <img class="img-responsive" [src]="item[0].img" alt="prewiew" [width]="item[0].category=='Consoles'? '120':'80'" height="80">
+                        </div>
+                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                            <a  [routerLink]="['/products',item[0].serialNumber]" class="text-dark"><h4 class="product-name"><strong>{{item[0].name}}</strong></h4></a>
+                            <p class="muted">
+                                Serial Number: {{item[0].serialNumber}}
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                            <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                                <h6>
+                                    <ng-container *ngIf="!isDiscounted(item[0].serialNumber); else elseBlock">
+                                        <strong>{{item[0].price*item[1]}}<span class="text-muted">₪</span></strong>
+                                    </ng-container>
+                                    <ng-template #elseBlock>
+                                        <del class="d-inline text-danger">{{item[0].price*1.2*item[1]}}₪</del>{{item[0].price*item[1]}}₪
+                                    </ng-template>
+                                </h6>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4">
+                                <div class="quantity">
+                                    <button (click)="addItem(item[0].serialNumber)" class="plus">+</button>
+                                    <input type="text"[value]="item[1]" title="Qty" class="qty"
+                                           size="4" readonly>
+                                    <button (click)="removeItem(item[0].serialNumber)" class="minus">-</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- END PRODUCT -->
+            </div>
+            <div class="card-footer">
+                <div class="pull-right" style="margin: 10px">
+                    <button (click)="emptyCart()" class="btn btn-success pull-right">Checkout</button>
+                    <div class="pull-right" style="margin: 5px">
+                        Total Items: <b>{{getTotalItems()}}</b>
+                    </div>
+                    <div class="pull-right" style="margin: 5px">
+                        Total Price: <b>{{getTotal()}}</b>₪
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

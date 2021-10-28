@@ -1,0 +1,11 @@
+<div style="overflow-x: hidden;">
+    <app-navbar></app-navbar>
+    <div class="row d-flex flex-row">
+        <div class="col sidebar">
+            <app-sidebar (showChange)="setShow($event)"></app-sidebar>
+        </div>
+        <div class="col">
+            <app-list [show]="show"></app-list>
+        </div>
+    </div>
+</div>
