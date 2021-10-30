@@ -4,7 +4,7 @@
         <h1 class="responsive-text">Welcome {{username}} To KSPlay</h1>
     </div>
         <div class="text-light text-center tow-tables">
-            <div>
+            <div class="space-to-mobile">
                 <h5>Products Of The Week</h5>
                 <table class="table-striped table-dark rounded">
                     <thead>
@@ -21,13 +21,13 @@
                         <th scope="row">{{tmp.serialNumber}}</th>
                         <td class="text-center"><img [src]="tmp.img" [width]="tmp.category=='Consoles'? '100':'50'" [height]="tmp.category=='Consoles'? '50':'75'"></td>
                         <td><a [routerLink]="['/products',tmp.serialNumber]">{{tmp.name}}</a></td>
-                        <td class="col"><button (click)="addItem(tmp.serialNumber)" class="btn btn-primary" style="margin-right: 5px;">Buy</button><del class="d-inline text-danger">{{tmp.price*1.2}}₪</del>{{tmp.price}}₪</td>
+                        <td class="col"><button (click)="addItem(tmp.serialNumber)" class="btn btn-primary" style="margin-right: 5px;">Buy</button>{{tmp.price}}₪<del class="d-flex justify-content-center text-danger">{{tmp.price*1.2}}₪</del></td>
                         <td>{{tmp.category}}</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <div>
+            <div class="space-to-mobile">
                 <h5>New Products</h5>
                 <table class="table-striped table-dark rounded">
                     <thead>
@@ -44,7 +44,7 @@
                         <th scope="row">{{tmp.serialNumber}}</th>
                         <td class="text-center"><img [src]="tmp.img" [width]="tmp.category=='Consoles'? '100':'50'" [height]="tmp.category=='Consoles'? '50':'75'"></td>
                         <td><a [routerLink]="['/products',tmp.serialNumber]">{{tmp.name}}</a></td>
-                        <td class="col"><button (click)="addItem(tmp.serialNumber)" class="btn btn-primary" style="margin-right: 5px;">Buy</button><ng-container class="d-inline">{{tmp.price}}₪</ng-container></td>
+                        <td class="col"><button (click)="addItem(tmp.serialNumber)" class="btn btn-primary" style="margin-right: 5px;">Buy</button><ng-container class="d-flex justify-content-center">{{tmp.price}}₪</ng-container></td>
                         <td>{{tmp.category}}</td>
                     </tr>
                     </tbody>
@@ -52,4 +52,5 @@
             </div>
         </div>
 </div>
+<div style="padding: 2%;"></div>
 <app-footer></app-footer>

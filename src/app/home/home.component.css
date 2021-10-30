@@ -23,6 +23,9 @@ a{
     justify-content: center;
     display: flex;
 }
+.location-nav{
+    top: 190vh;
+}
 /*for mobile*/
 @media only screen
     and (min-width: 375px) 
@@ -31,8 +34,7 @@ a{
             justify-content: center;
             display: flex;
             flex-wrap: wrap;
-            margin: 0;
-            padding: 0;
+            padding: 1%;
 
         }
         .tow-tables td{
@@ -48,5 +50,9 @@ a{
         }
         .responsive-text{
             font-size: x-large;
+        }
+        .space-to-mobile{
+            margin-left: 15%;
+            margin-right: 15%;
         }
     }
