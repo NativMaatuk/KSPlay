@@ -52,3 +52,17 @@ h4 {
 .page{
     height: 100vh;
 }
+.card{
+    width: 30%;
+    margin:auto;
+    margin-top: 5%;
+}
+@media only screen
+    and (min-width: 375px) 
+    and (max-width: 898px) {
+        .card{
+            width: 80%;
+            margin:auto;
+            margin-top: 10%;
+            }
+    }

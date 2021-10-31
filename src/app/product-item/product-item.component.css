@@ -1,0 +1,19 @@
+.card{
+   min-width: 85%;
+   max-width: 85%;
+   justify-content: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 2%;
+}
+.app-footer{
+    padding-top: 5%;
+}
+
+@media only screen
+    and (min-width: 375px) 
+    and (max-width: 898px) {
+        .card{
+            min-width: 95%;
+        }
+    }

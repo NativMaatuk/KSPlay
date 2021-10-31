@@ -43,13 +43,13 @@ a{
         }
         .tow-tables th{
             padding: 1;
-            margin: 0;
         }
         .page{
-            height: 145vh;
+            height: 155vh;
         }
         .responsive-text{
-            font-size: x-large;
+            font-size: 30px;
+            padding-top: 5%;
         }
         .space-to-mobile{
             margin-left: 15%;

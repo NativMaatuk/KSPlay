@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
-<div class="card-group" style="margin: 1%;">
-    <div class="card" style="width: 18rem;">
+<div class="card-group">
+    <div class="card">
         <div class="card-body">
+          <img [src]="product.img"  [width]="product.category=='Consoles'? '350':'250'" [height]="product.category=='Consoles'? '250':'350'">
           <h5 class="card-title font-weight-bold">{{product.name}}</h5>
           <h6 class="card-subtitle mb-2 text-muted"><b>Serial Number:</b> {{product.serialNumber}}</h6>
           <p class="card-text">{{product.description}}</p>
@@ -18,5 +19,7 @@
           </p>
         </div>
       </div>
-      <img [src]="product.img"  [width]="product.category=='Consoles'? '450':'250'" [height]="product.category=='Consoles'? '250':'350'">
+     
 </div>
+<div class="app-footer"></div>
+<app-footer></app-footer>

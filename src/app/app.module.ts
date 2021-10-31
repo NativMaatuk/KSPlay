@@ -29,7 +29,7 @@ import { ListComponent } from './products/list/list.component';
     HomeComponent,
     ProductItemComponent,
     SidebarComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     BrowserModule,
